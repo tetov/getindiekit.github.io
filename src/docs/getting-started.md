@@ -33,7 +33,7 @@ indiekit.set('publication.me', 'https://paulrobertlloyd.com');
 
 ## Add a publication preset
 
-Indiekit needs to know what post types you want to publish (for example notes and photos) and in which format. This information can be provided by setting `publication.postTypes` and `publication.postTemplate`. See [Configuring post types](/docs/post-types.md) and [Creating a post template](/docs/post-template.md).
+Indiekit needs to know what post types you want to publish (for example notes and photos) and in which format. This information can be provided by setting `publication.postTypes` and `publication.postTemplate`. See [Configuring post types](/docs/post-types/) and [Creating a post template](/docs/post-template/).
 
 A publication preset plug-in can provide default values for these options (which you can override in your configuration file).
 
