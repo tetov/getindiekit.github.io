@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = function (eleventyConfig) {
   // Template libraries
   eleventyConfig.setLibrary('njk', require('./lib/libraries/nunjucks'));

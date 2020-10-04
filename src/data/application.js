@@ -2,6 +2,7 @@ const package_ = require('../../package.json');
 
 module.exports = {
   name: 'Indiekit',
+  url: process.env.URL || 'https://getindiekit.com',
   navigation: [{
     href: '/docs',
     text: 'Docs'
