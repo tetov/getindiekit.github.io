@@ -10,7 +10,8 @@ module.exports = function (eleventyConfig) {
 
   // Passthrough
   eleventyConfig.addPassthroughCopy({
-    'node_modules/@indiekit/frontend/assets': 'assets'
+    'node_modules/@indiekit/frontend/assets': 'assets',
+    'src/CNAME': 'CNAME'
   });
 
   // Config
