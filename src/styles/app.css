@@ -1,0 +1,6 @@
+@import '@indiekit/frontend/styles/config/*.css';
+@import '@indiekit/frontend/styles/base/*.css';
+@import '@indiekit/frontend/styles/scopes/*.css';
+@import '@indiekit/frontend/styles/helpers/*.css';
+@import '@indiekit/frontend/styles/vendor/*.css';
+@import '@indiekit/frontend/components/**/*.css';

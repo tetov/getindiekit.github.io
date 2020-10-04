@@ -1,0 +1,61 @@
+{
+  "private": true,
+  "name": "@indiekit/website",
+  "version": "0.1.0",
+  "description": "Website for Indiekit",
+  "keywords": [
+    "indiekit",
+    "indieweb",
+    "micropub"
+  ],
+  "author": {
+    "name": "Paul Robert Lloyd",
+    "url": "https://paulrobertlloyd.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rm -rf docs && mkdir -p docs/assets",
+    "build:files": "eleventy --quiet",
+    "build:styles": "postcss src/styles/app.css -o docs/assets/app.css --config etc/postcss.config.js",
+    "build": "npm run build:styles && npm run build:files",
+    "watch:files": "eleventy --quiet --serve",
+    "watch:styles": "postcss src/styles/app.css -o docs/assets/app.css --config etc/postcss.config.js --watch",
+    "watch": "npm-run-all --parallel watch:*",
+    "lint:markdown": "markdownlint '**/*.md'",
+    "lint:styles": "stylelint 'src/**/*.css'",
+    "lint": "npm-run-all lint:*",
+    "debug": "DEBUG=* npx eleventy"
+  },
+  "bugs": {
+    "url": "https://github.com/getindiekit/getindiekit.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getindiekit/getindiekit.github.io.git"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@indiekit/frontend": "0.1.0-alpha.10",
+    "markdown-it-anchor": "^6.0.0",
+    "markdown-it-deflist": "^2.1.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.0.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-extend-rule": "^3.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "husky": "^4.2.5",
+    "markdownlint-cli": "^0.23.1",
+    "stylelint": "^13.7.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS"
+    }
+  }
+}
