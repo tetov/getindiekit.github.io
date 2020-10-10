@@ -14,6 +14,7 @@ The following endpoints are included by default:
 
 * [GitHub](https://www.npmjs.com/package/@indiekit/store-github)
 * [GitLab](https://www.npmjs.com/package/@indiekit/store-gitlab)
+* [Gitea](https://www.npmjs.com/package/@indiekit/store-gitea)
 
 ## Publication presets
 
