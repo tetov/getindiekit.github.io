@@ -9,6 +9,7 @@ The following endpoints are included by default:
 * [Micropub](https://www.npmjs.com/package/@indiekit/endpoint-micropub)
 * [Micropub media](https://www.npmjs.com/package/@indiekit/endpoint-media)
 * [Share](https://www.npmjs.com/package/@indiekit/endpoint-share)
+* [Syndication](https://www.npmjs.com/package/@indiekit/endpoint-syndicate)
 
 ## Content stores
 
@@ -20,3 +21,7 @@ The following endpoints are included by default:
 
 * [Jekyll](https://www.npmjs.com/package/@indiekit/preset-jekyll)
 * [Hugo](https://www.npmjs.com/package/@indiekit/preset-hugo)
+
+## Syndicators
+
+* [Internet Archive](https://www.npmjs.com/package/@indiekit/syndicator-internet-archive)
