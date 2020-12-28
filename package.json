@@ -33,6 +33,9 @@
     "type": "git",
     "url": "https://github.com/getindiekit/getindiekit.github.io.git"
   },
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
