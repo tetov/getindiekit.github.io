@@ -566,6 +566,11 @@ mark {
   margin-block-start: var(--flow-space);
 }
 
+.s-linear > *:not([class]) {
+  max-inline-size: var(--line-measure);
+  word-break: break-word;
+}
+
 .s-linear svg {
   vertical-align: text-bottom;
 }
@@ -584,11 +589,6 @@ mark {
   background: none;
   font-size: 67%;
   padding: 0;
-}
-
-.s-linear > *:not([class]) {
-  max-inline-size: var(--line-measure);
-  word-break: break-word;
 }
 
 .s-linear h2:not([class]) {
@@ -693,8 +693,8 @@ mark {
 }
 
 .s-linear .overflow {
-  overflow: auto;
   border: var(--border-width-thin) solid var(--color-offset);
+  overflow: auto;
 }
 
 .visually-hidden {
@@ -1520,8 +1520,18 @@ mark {
   word-break: break-word;
 }
 
+.summary__value > * {
+  margin-block-start: 0;
+}
+
 .summary__value a {
   white-space: nowrap;
+}
+
+.summary__value img {
+  display: inline;
+  margin-inline-end: 5px;
+  vertical-align: text-bottom;
 }
 
 .summary__actions {

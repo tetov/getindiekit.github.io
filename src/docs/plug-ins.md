@@ -13,6 +13,7 @@ The following endpoints are included by default:
 
 ## Content stores
 
+* [Bitbucket](https://www.npmjs.com/package/@indiekit/store-bitbucket)
 * [GitHub](https://www.npmjs.com/package/@indiekit/store-github)
 * [GitLab](https://www.npmjs.com/package/@indiekit/store-gitlab)
 * [Gitea](https://www.npmjs.com/package/@indiekit/store-gitea)
@@ -25,3 +26,4 @@ The following endpoints are included by default:
 ## Syndicators
 
 * [Internet Archive](https://www.npmjs.com/package/@indiekit/syndicator-internet-archive)
+* [Twitter](https://www.npmjs.com/package/@indiekit/syndicator-twitter)
