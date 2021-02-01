@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: 'njk',
     dir: {
       input: 'src',
-      output: 'docs',
+      output: 'gh-pages',
       layouts: 'layouts',
       includes: 'components',
       data: 'data'
