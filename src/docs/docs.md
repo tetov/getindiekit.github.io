@@ -14,8 +14,4 @@ parent: false
 * [Creating a post template](post-template)
 * [Customising commit messages](commit-messages)
 * [Setting a time zone](time-zone)
-
-## Extending Indiekit
-
 * [Localisation](localisation)
-* [Plug-ins](plug-ins)

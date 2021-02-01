@@ -17,7 +17,7 @@
         --color-accent-lightest: #ADCBFF;
       }
     </style>
-    <title>Indiekit - Indiekit</title>
+    <title>Micropub media - Indiekit</title>
   </head><body class="app">    <header class="header">
       <div class="header__container">
         <div class="header__title">
@@ -27,26 +27,26 @@
         </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
     </header><main class="main" id="main">
       <article class="article">  <h1 class="article__title">
-Indiekit</h1>  <div class="article__body s-linear">
-<p>Indiekit is a small but powerful server that acts as the go-between your website and the wider independent web.</p>
+<span class="article__parent">Plug-ins</span> Micropub media</h1>  <div class="article__body s-linear">
+<p>Micropub media endpoint for Indiekit.</p>
+<h2>Installation</h2>
+<p><code>npm i @indiekit/endpoint-media</code></p>
+<h2>Configuration</h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> MediaEndpoint <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@indiekit/endpoint-media'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> mediaEndpoint <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MediaEndpoint</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// config options here</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3>Options</h3>
+<ul>
+<li><code>mountpath</code>: Path to listen to media upload requests. <em>Optional</em>, defaults to <code>/media</code>.</li>
+</ul>
+<h3>Supported endpoint queries</h3>
 <ul>
 <li>
-<p>Publish content to your website using apps like <a href="https://ia.net/writer">iAWriter</a>, <a href="https://micro.blog">Micro.blog</a>, <a href="https://hartl.co/apps/icro/">Icro</a>, <a href="https://indigenous.realize.be">Indigenous</a> or services that support the <a href="https://micropub.spec.indieweb.org">Micropub API</a></p>
-</li>
-<li>
-<p>Syndicate your content to Twitter (support for other social networks coming later) and save posts to the Internet Archive</p>
-</li>
-<li>
-<p>Accept likes, comments and other types of feedback on your content with Webmention (coming soon)</p>
-</li>
-<li>
-<p>Save files to different content stores such as Bitbucket, GitHub, GitLab and Gitea</p>
-</li>
-<li>
-<p>Highly configurable, with presets available for common static site generators such as Jekyll and Hugo.</p>
-</li>
-<li>
-<p>Localisable, with initial support for English, French and German.</p>
+<p>Previously published media: <code>/media?q=source</code></p>
+<p>Supports <code>filter</code>, <code>limit</code> and <code>offset</code> and parameters. For example, <code>/media?q=source&amp;filter=web&amp;limit=10&amp;offset=10</code>.</p>
 </li>
 </ul>
 </div>

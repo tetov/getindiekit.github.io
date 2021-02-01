@@ -17,7 +17,7 @@
         --color-accent-lightest: #ADCBFF;
       }
     </style>
-    <title>Indiekit - Indiekit</title>
+    <title>Share - Indiekit</title>
   </head><body class="app">    <header class="header">
       <div class="header__container">
         <div class="header__title">
@@ -27,27 +27,20 @@
         </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
     </header><main class="main" id="main">
       <article class="article">  <h1 class="article__title">
-Indiekit</h1>  <div class="article__body s-linear">
-<p>Indiekit is a small but powerful server that acts as the go-between your website and the wider independent web.</p>
+<span class="article__parent">Plug-ins</span> Share</h1>  <div class="article__body s-linear">
+<p>Share endpoint for Indiekit. Inspired and developed from <a href="https://mxb.dev/blog/indieweb-link-sharing/">an idea described by Max Böck</a>.</p>
+<h2>Installation</h2>
+<p><code>npm i @indiekit/endpoint-share</code></p>
+<h2>Configuration</h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> ShareEndpoint <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@indiekit/endpoint-share'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> shareEndpoint <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShareEndpoint</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// config options here</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3>Options</h3>
 <ul>
-<li>
-<p>Publish content to your website using apps like <a href="https://ia.net/writer">iAWriter</a>, <a href="https://micro.blog">Micro.blog</a>, <a href="https://hartl.co/apps/icro/">Icro</a>, <a href="https://indigenous.realize.be">Indigenous</a> or services that support the <a href="https://micropub.spec.indieweb.org">Micropub API</a></p>
-</li>
-<li>
-<p>Syndicate your content to Twitter (support for other social networks coming later) and save posts to the Internet Archive</p>
-</li>
-<li>
-<p>Accept likes, comments and other types of feedback on your content with Webmention (coming soon)</p>
-</li>
-<li>
-<p>Save files to different content stores such as Bitbucket, GitHub, GitLab and Gitea</p>
-</li>
-<li>
-<p>Highly configurable, with presets available for common static site generators such as Jekyll and Hugo.</p>
-</li>
-<li>
-<p>Localisable, with initial support for English, French and German.</p>
-</li>
+<li><code>mountpath</code>: Path to share screen. <em>Optional</em>, defaults to <code>/share</code>.</li>
 </ul>
 </div>
 </article>    </main>    <footer class="footer">

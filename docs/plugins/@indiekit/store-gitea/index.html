@@ -17,7 +17,7 @@
         --color-accent-lightest: #ADCBFF;
       }
     </style>
-    <title>Indiekit - Indiekit</title>
+    <title>Gitea - Indiekit</title>
   </head><body class="app">    <header class="header">
       <div class="header__container">
         <div class="header__title">
@@ -27,28 +27,38 @@
         </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
     </header><main class="main" id="main">
       <article class="article">  <h1 class="article__title">
-Indiekit</h1>  <div class="article__body s-linear">
-<p>Indiekit is a small but powerful server that acts as the go-between your website and the wider independent web.</p>
-<ul>
-<li>
-<p>Publish content to your website using apps like <a href="https://ia.net/writer">iAWriter</a>, <a href="https://micro.blog">Micro.blog</a>, <a href="https://hartl.co/apps/icro/">Icro</a>, <a href="https://indigenous.realize.be">Indigenous</a> or services that support the <a href="https://micropub.spec.indieweb.org">Micropub API</a></p>
-</li>
-<li>
-<p>Syndicate your content to Twitter (support for other social networks coming later) and save posts to the Internet Archive</p>
-</li>
-<li>
-<p>Accept likes, comments and other types of feedback on your content with Webmention (coming soon)</p>
-</li>
-<li>
-<p>Save files to different content stores such as Bitbucket, GitHub, GitLab and Gitea</p>
-</li>
-<li>
-<p>Highly configurable, with presets available for common static site generators such as Jekyll and Hugo.</p>
-</li>
-<li>
-<p>Localisable, with initial support for English, French and German.</p>
-</li>
-</ul>
+<span class="article__parent">Plug-ins</span> Gitea</h1>  <div class="article__body s-linear">
+<p>Store IndieWeb content on Gitea.</p>
+<h2>Installation</h2>
+<p><code>npm i @indiekit/store-gitea</code></p>
+<h2>Configuration</h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> GiteaStore <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@indiekit/store-gitea'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> gitea <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GiteaStore</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// config options here</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2>Options</h2>
+<h3><code>branch</code></h3>
+<p>The branch files will be saved to.</p>
+<p>Type: <code>string</code><br>
+<em>Optional</em>, defaults to <code>master</code></p>
+<h3><code>host</code></h3>
+<p>Gitea instance URL.</p>
+<p>Type: <code>string</code><br>
+<em>Optional</em>, defaults to <code>https://gitea.com</code></p>
+<h3><code>repo</code></h3>
+<p>The name of your Gitea repository.</p>
+<p>Type: <code>string</code><br>
+<em>Required</em></p>
+<h3><code>token</code></h3>
+<p>A Gitea access token.</p>
+<p>Type: <code>string</code><br>
+<em>Required</em></p>
+<h3><code>user</code></h3>
+<p>Your Gitea username.</p>
+<p>Type: <code>string</code><br>
+<em>Required</em></p>
 </div>
 </article>    </main>    <footer class="footer">
       <div class="footer__container">    <nav class="footer__navigation" aria-label="secondary">      <a href="https://github.com/getindiekit/getindiekithub.io/releases/tag/v0.1.0">v0.1.0</a>    </nav>    <a class="footer__logo" href="https://getindiekit.com">

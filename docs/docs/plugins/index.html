@@ -17,7 +17,7 @@
         --color-accent-lightest: #ADCBFF;
       }
     </style>
-    <title>Indiekit - Indiekit</title>
+    <title>Plug-ins - Indiekit</title>
   </head><body class="app">    <header class="header">
       <div class="header__container">
         <div class="header__title">
@@ -27,27 +27,33 @@
         </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
     </header><main class="main" id="main">
       <article class="article">  <h1 class="article__title">
-Indiekit</h1>  <div class="article__body s-linear">
-<p>Indiekit is a small but powerful server that acts as the go-between your website and the wider independent web.</p>
+<span class="article__parent">Documentation</span> Plug-ins</h1>  <div class="article__body s-linear">
+<p>@indiekit/store-github<br><br>
+@indiekit/store-gitlab<br></p>
+<h2 id="endpoints">Endpoints</h2>
+<p>The following endpoints are included by default:</p>
 <ul>
-<li>
-<p>Publish content to your website using apps like <a href="https://ia.net/writer">iAWriter</a>, <a href="https://micro.blog">Micro.blog</a>, <a href="https://hartl.co/apps/icro/">Icro</a>, <a href="https://indigenous.realize.be">Indigenous</a> or services that support the <a href="https://micropub.spec.indieweb.org">Micropub API</a></p>
-</li>
-<li>
-<p>Syndicate your content to Twitter (support for other social networks coming later) and save posts to the Internet Archive</p>
-</li>
-<li>
-<p>Accept likes, comments and other types of feedback on your content with Webmention (coming soon)</p>
-</li>
-<li>
-<p>Save files to different content stores such as Bitbucket, GitHub, GitLab and Gitea</p>
-</li>
-<li>
-<p>Highly configurable, with presets available for common static site generators such as Jekyll and Hugo.</p>
-</li>
-<li>
-<p>Localisable, with initial support for English, French and German.</p>
-</li>
+<li><a href="https://www.npmjs.com/package/@indiekit/endpoint-micropub">Micropub</a></li>
+<li><a href="https://www.npmjs.com/package/@indiekit/endpoint-media">Micropub media</a></li>
+<li><a href="https://www.npmjs.com/package/@indiekit/endpoint-share">Share</a></li>
+<li><a href="https://www.npmjs.com/package/@indiekit/endpoint-syndicate">Syndication</a></li>
+</ul>
+<h2 id="content-stores">Content stores</h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/@indiekit/store-bitbucket">Bitbucket</a></li>
+<li><a href="https://www.npmjs.com/package/@indiekit/store-github">GitHub</a></li>
+<li><a href="https://www.npmjs.com/package/@indiekit/store-gitlab">GitLab</a></li>
+<li><a href="https://www.npmjs.com/package/@indiekit/store-gitea">Gitea</a></li>
+</ul>
+<h2 id="publication-presets">Publication presets</h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/@indiekit/preset-jekyll">Jekyll</a></li>
+<li><a href="https://www.npmjs.com/package/@indiekit/preset-hugo">Hugo</a></li>
+</ul>
+<h2 id="syndicators">Syndicators</h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/@indiekit/syndicator-internet-archive">Internet Archive</a></li>
+<li><a href="https://www.npmjs.com/package/@indiekit/syndicator-twitter">Twitter</a></li>
 </ul>
 </div>
 </article>    </main>    <footer class="footer">

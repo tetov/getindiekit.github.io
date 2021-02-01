@@ -17,7 +17,7 @@
         --color-accent-lightest: #ADCBFF;
       }
     </style>
-    <title>Indiekit - Indiekit</title>
+    <title>Plug-ins - Indiekit</title>
   </head><body class="app">    <header class="header">
       <div class="header__container">
         <div class="header__title">
@@ -27,27 +27,42 @@
         </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
     </header><main class="main" id="main">
       <article class="article">  <h1 class="article__title">
-Indiekit</h1>  <div class="article__body s-linear">
-<p>Indiekit is a small but powerful server that acts as the go-between your website and the wider independent web.</p>
+Plug-ins</h1>  <div class="article__body s-linear">
+<h2>Content stores</h2>
 <ul>
-<li>
-<p>Publish content to your website using apps like <a href="https://ia.net/writer">iAWriter</a>, <a href="https://micro.blog">Micro.blog</a>, <a href="https://hartl.co/apps/icro/">Icro</a>, <a href="https://indigenous.realize.be">Indigenous</a> or services that support the <a href="https://micropub.spec.indieweb.org">Micropub API</a></p>
-</li>
-<li>
-<p>Syndicate your content to Twitter (support for other social networks coming later) and save posts to the Internet Archive</p>
-</li>
-<li>
-<p>Accept likes, comments and other types of feedback on your content with Webmention (coming soon)</p>
-</li>
-<li>
-<p>Save files to different content stores such as Bitbucket, GitHub, GitLab and Gitea</p>
-</li>
-<li>
-<p>Highly configurable, with presets available for common static site generators such as Jekyll and Hugo.</p>
-</li>
-<li>
-<p>Localisable, with initial support for English, French and German.</p>
-</li>
+<li><a href="/plugins/@indiekit/store-bitbucket">Bitbucket</a><br>
+Store IndieWeb content on Bitbucket</li>
+<li><a href="/plugins/@indiekit/store-gitea">Gitea</a><br>
+Store IndieWeb content on Gitea</li>
+<li><a href="/plugins/@indiekit/store-github">GitHub</a><br>
+Store IndieWeb content on GitHub</li>
+<li><a href="/plugins/@indiekit/store-gitlab">GitLab</a><br>
+Store IndieWeb content on GitLab</li>
+</ul>
+<h2>Endpoints</h2>
+<ul>
+<li><a href="/plugins/@indiekit/endpoint-micropub">Micropub</a> (Built-in)<br>
+Micropub endpoint for Indiekit</li>
+<li><a href="/plugins/@indiekit/endpoint-media">Micropub media</a> (Built-in)<br>
+Micropub media endpoint for Indiekit</li>
+<li><a href="/plugins/@indiekit/endpoint-share">Share</a> (Built-in)<br>
+Share endpoint for Indiekit</li>
+<li><a href="/plugins/@indiekit/endpoint-syndicate">Syndicate</a> (Built-in)<br>
+Syndication endpoint for Indiekit</li>
+</ul>
+<h2>Publication presets</h2>
+<ul>
+<li><a href="/plugins/@indiekit/preset-hugo">Hugo</a><br>
+Indiekit config for Hugo-based websites</li>
+<li><a href="/plugins/@indiekit/preset-jekyll">Jekyll</a><br>
+Indiekit preset for Jekyll-based websites</li>
+</ul>
+<h2>Syndicators</h2>
+<ul>
+<li><a href="/plugins/@indiekit/syndicator-internet-archive">Internet Archive</a><br>
+Syndicate IndieWeb content to the Internet Archive</li>
+<li><a href="/plugins/@indiekit/syndicator-twitter">Twitter</a><br>
+Syndicate IndieWeb content to Twitter</li>
 </ul>
 </div>
 </article>    </main>    <footer class="footer">

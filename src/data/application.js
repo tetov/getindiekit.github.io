@@ -7,6 +7,9 @@ module.exports = {
     href: '/docs',
     text: 'Docs'
   }, {
+    href: '/plugins',
+    text: 'Plug-ins'
+  }, {
     href: 'https://github.com/getindiekit/indiekit',
     text: 'GitHub'
   }],

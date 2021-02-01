@@ -1,0 +1,32 @@
+---
+title: Plug-ins
+parent: false
+---
+
+## Content stores
+
+{% for item in plugins | selectattr("store") %}
+* [{{ item.name }}](/plugins/{{ item.package }})
+  {{ item.description }}
+{% endfor %}
+
+## Endpoints
+
+{% for item in plugins | selectattr("endpoint") %}
+* [{{ item.name }}](/plugins/{{ item.package }}){% if item.builtin %} (Built-in){% endif %}\
+  {{ item.description }}
+{% endfor %}
+
+## Publication presets
+
+{% for item in plugins | selectattr("preset") %}
+* [{{ item.name }}](/plugins/{{ item.package }})
+  {{ item.description }}
+{% endfor %}
+
+## Syndicators
+
+{% for item in plugins | selectattr("syndicator") %}
+* [{{ item.name }}](/plugins/{{ item.package }})
+  {{ item.description }}
+{% endfor %}

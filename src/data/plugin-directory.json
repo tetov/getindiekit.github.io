@@ -1,0 +1,54 @@
+{
+  "@indiekit/endpoint-micropub": {
+    "name": "Micropub",
+    "builtin": true,
+    "type": "endpoint"
+  },
+  "@indiekit/endpoint-media": {
+    "name": "Micropub media",
+    "builtin": true,
+    "type": "endpoint"
+  },
+  "@indiekit/endpoint-share": {
+    "name": "Share",
+    "builtin": true,
+    "type": "endpoint"
+  },
+  "@indiekit/endpoint-syndicate": {
+    "name": "Syndicate",
+    "builtin": true,
+    "type": "endpoint"
+  },
+  "@indiekit/preset-hugo": {
+    "name": "Hugo",
+    "type": "preset"
+  },
+  "@indiekit/preset-jekyll": {
+    "name": "Jekyll",
+    "type": "preset"
+  },
+  "@indiekit/store-bitbucket": {
+    "name": "Bitbucket",
+    "type": "store"
+  },
+  "@indiekit/store-gitea": {
+    "name": "Gitea",
+    "type": "store"
+  },
+  "@indiekit/store-github": {
+    "name": "GitHub",
+    "type": "store"
+  },
+  "@indiekit/store-gitlab": {
+    "name": "GitLab",
+    "type": "store"
+  },
+  "@indiekit/syndicator-internet-archive": {
+    "name": "Internet Archive",
+    "type": "syndicator"
+  },
+  "@indiekit/syndicator-twitter": {
+    "name": "Twitter",
+    "type": "syndicator"
+  }
+}

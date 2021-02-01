@@ -1,0 +1,11 @@
+---
+pagination:
+  data: plugins
+  size: 1
+  alias: plugin
+  addAllPagesToCollections: true
+permalink: "plugins/{{ plugin.package }}/"
+eleventyComputed:
+  title: "{{ plugin.name }}"
+---
+{{ plugin.readme | safe }}
