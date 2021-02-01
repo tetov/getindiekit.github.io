@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="h-x-app color-scheme--automatic">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta name="theme-color" content="#0055ee"/>
+    <meta name="supported-color-schemes" content="light dark"/>
+    <link rel="icon" href="https://getindiekit.com/assets/icon.svg"/>
+    <link rel="mask-icon" href="https://getindiekit.com/assets/icon.svg" color="#0055ee"/>
+    <link rel="stylesheet" href="https://getindiekit.com/assets/app.css"/>
+    <style>
+      :root {
+        --color-accent: #0055ee;
+        --color-accent-dark: #00338F;
+        --color-accent-darkest: #00225F;
+        --color-accent-light: #7EACFF;
+        --color-accent-lightest: #ADCBFF;
+      }
+    </style>
+    <title>Configuring post types - Indiekit</title>
+  </head><body class="app">    <header class="header">
+      <div class="header__container">
+        <div class="header__title">
+          <a class="u-url" href="https://getindiekit.com">
+            <span class="p-name">Indiekit</span>
+          </a>
+        </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
+    </header><main class="main" id="main">
+      <article class="article">  <h1 class="article__title">
+<span class="article__parent">Documentation</span> Configuring post types</h1>  <div class="article__body s-linear">
+<p>Micropub clients let you publish a variety of <a href="https://indieweb.org/Category:PostType">post types</a>, and Indiekit lets you decide how these different types are handled. You can do this by using a publication preset, configuring values manually, or a combination of both.</p>
+<p>For example, to use the Jekyll preset but override the <code>note</code> and <code>photo</code> post types, you would use the following configuration:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>JekyllPreset<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@indiekit/preset-jekyll'</span><span class="token punctuation">;</span><br><br><span class="token comment">// Use a preset</span><br><span class="token keyword">const</span> jekyll <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JekyllPreset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>indiekit<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'publication.preset'</span><span class="token punctuation">,</span> jekyll<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">// Override preset post type</span><br>indiekit<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'publication.postTypes'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><br>  type<span class="token operator">:</span> <span class="token string">'note'</span><span class="token punctuation">,</span><br>  name<span class="token operator">:</span> <span class="token string">'Journal entry'</span><span class="token punctuation">,</span><br>  post<span class="token operator">:</span> <span class="token punctuation">{</span><br>    path<span class="token operator">:</span> <span class="token string">'_journal/{​yyyy}-{MM}-{dd}-{​slug}.md'</span><span class="token punctuation">,</span><br>    url<span class="token operator">:</span> <span class="token string">'journal/{yyyy}/{MM}/{​slug}'</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><br>  type<span class="token operator">:</span> <span class="token string">'photo'</span><span class="token punctuation">,</span><br>  name<span class="token operator">:</span> <span class="token string">'Photograph'</span><span class="token punctuation">,</span><br>  post<span class="token operator">:</span> <span class="token punctuation">{</span><br>    path<span class="token operator">:</span> <span class="token string">'_photos/{​yyyy}-{MM}-{dd}-{​slug}.md'</span><span class="token punctuation">,</span><br>    url<span class="token operator">:</span> <span class="token string">'photos/{yyyy}/{MM}/{​slug}'</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  media<span class="token operator">:</span> <span class="token punctuation">{</span><br>    path<span class="token operator">:</span> <span class="token string">'media/photos/{​yyyy}/{​filename}'</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Each post type can take the following values:</p>
+<ul>
+<li>
+<p><strong><code>type</code></strong>: The IndieWeb <a href="https://indieweb.org/Category:PostType">post type</a>.</p>
+</li>
+<li>
+<p><strong><code>name</code></strong>: The name you use for this post type on your own site. You needn’t specify this value, but some Micropub clients use it in their publishing interfaces.</p>
+</li>
+<li>
+<p><strong><code>post.path</code></strong>: Where posts should be saved in your repository.</p>
+</li>
+<li>
+<p><strong><code>post.url</code></strong>: Permalink (the URL path) for posts on your website.</p>
+</li>
+<li>
+<p><strong><code>media.path</code></strong>: Where media files should be saved in your repository. This applies only to <code>photo</code>, <code>video</code> and <code>audio</code> post types.</p>
+</li>
+<li>
+<p><strong><code>media.url</code></strong>: Public accessible URL for media files. This can use the same template variables as <code>media.path</code>. If no value is provided, defaults to <code>media.path</code>.</p>
+</li>
+</ul>
+<h2 id="creating-custom-paths-and-urls">Creating custom paths and URLs</h2>
+<p>Both <code>path</code> and <code>url</code> values can be customised using the following date tokens:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Token</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>y</code></td>
+<td style="text-align:left">Calendar year, eg <samp>2020</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>yyyy</code></td>
+<td style="text-align:left">Calendar year (zero-padded), eg <samp>2020</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>M</code></td>
+<td style="text-align:left">Month number, eg <samp>9</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>MM</code></td>
+<td style="text-align:left">Month number (zero-padded), eg <samp>09</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>MMM</code></td>
+<td style="text-align:left">Month name (abbreviated), eg <samp>Sep</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>MMMM</code></td>
+<td style="text-align:left">Month name (wide), eg <samp>September</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>w</code></td>
+<td style="text-align:left">Week number, eg <samp>1</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ww</code></td>
+<td style="text-align:left">Week number (zero-padded), eg <samp>01</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>D</code></td>
+<td style="text-align:left">Day of the year, eg <samp>1</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>DDD</code></td>
+<td style="text-align:left">Day of the year (zero-padded), eg <samp>001</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>D60</code></td>
+<td style="text-align:left">Day of the year (sexageismal), eg <samp>57h</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>d</code></td>
+<td style="text-align:left">Day of the month, eg <samp>1</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dd</code></td>
+<td style="text-align:left">Day of the month (zero-padded), eg <samp>01</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>h</code></td>
+<td style="text-align:left">Hour (12-hour-cycle), eg <samp>1</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>hh</code></td>
+<td style="text-align:left">Hour (12-hour-cycle, zero-padded), eg <samp>01</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>H</code></td>
+<td style="text-align:left">Hour (24-hour-cycle), eg <samp>1</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HH</code></td>
+<td style="text-align:left">Hour (24-hour-cycle, zero-padded), eg <samp>01</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>m</code></td>
+<td style="text-align:left">Minute, eg <samp>1</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>mm</code></td>
+<td style="text-align:left">Minute (zero-padded), eg <samp>01</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>s</code></td>
+<td style="text-align:left">Second, eg <samp>1</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ss</code></td>
+<td style="text-align:left">Second (zero-padded), eg <samp>01</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>t</code></td>
+<td style="text-align:left">UNIX epoch seconds, eg <samp>512969520</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>T</code></td>
+<td style="text-align:left">UNIX epoch milliseconds, eg <samp>51296952000</samp></td>
+</tr>
+</tbody>
+</table>
+<p>The following template tokens are available for post paths and URLs:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Token</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>slug</code></td>
+<td style="text-align:left">Provided slug, slugified <code>name</code> or a 5 character string, eg <samp>ycf9o</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>uuid</code></td>
+<td style="text-align:left">A <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.4">random UUID</a></td>
+</tr>
+</tbody>
+</table>
+<p>The following template tokens are available for media file paths and URLs:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Token</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>basename</code></td>
+<td style="text-align:left">5 character alpha-numeric string, eg <samp>w9gwi</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ext</code></td>
+<td style="text-align:left">File extension of uploaded file, eg <samp>jpg</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>filename</code></td>
+<td style="text-align:left"><code>basename</code> plus <code>ext</code>, eg <samp>w9gwi.jpg</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>originalname</code></td>
+<td style="text-align:left">Original name of uploaded file, eg <samp>flower.jpg</samp></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>uuid</code></td>
+<td style="text-align:left">A <a href="https://www.rfc-editor.org/rfc/rfc4122.html#section-4.4">random UUID</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>    </main>    <footer class="footer">
+      <div class="footer__container">    <nav class="footer__navigation" aria-label="secondary">      <a href="https://github.com/getindiekit/getindiekithub.io/releases/tag/v0.1.0">v0.1.0</a>    </nav>    <a class="footer__logo" href="https://getindiekit.com">
+          <img class="u-logo" src="https://getindiekit.com/assets/icon.svg" alt="Powered by Indiekit"/>
+        </a>  </div>
+    </footer>  </body>
+</html>

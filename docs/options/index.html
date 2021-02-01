@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="h-x-app color-scheme--automatic">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta name="theme-color" content="#0055ee"/>
+    <meta name="supported-color-schemes" content="light dark"/>
+    <link rel="icon" href="https://getindiekit.com/assets/icon.svg"/>
+    <link rel="mask-icon" href="https://getindiekit.com/assets/icon.svg" color="#0055ee"/>
+    <link rel="stylesheet" href="https://getindiekit.com/assets/app.css"/>
+    <style>
+      :root {
+        --color-accent: #0055ee;
+        --color-accent-dark: #00338F;
+        --color-accent-darkest: #00225F;
+        --color-accent-light: #7EACFF;
+        --color-accent-lightest: #ADCBFF;
+      }
+    </style>
+    <title>Configuration options - Indiekit</title>
+  </head><body class="app">    <header class="header">
+      <div class="header__container">
+        <div class="header__title">
+          <a class="u-url" href="https://getindiekit.com">
+            <span class="p-name">Indiekit</span>
+          </a>
+        </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
+    </header><main class="main" id="main">
+      <article class="article">  <h1 class="article__title">
+<span class="article__parent">Documentation</span> Configuration options</h1>  <div class="article__body s-linear">
+<h2 id="application">Application</h2>
+<dl>
+<dt>application.locale <code>string</code></dt>
+<dd>The language used in the application interface. See the list of <a href="/docs/localisation/">supported languages</a>.</dd>
+<dd><em>Optional</em>, defaults to system language if supported, else <code>en</code> (English)</dd>
+<dt>application.mongodbUrl <code>URL</code></dt>
+<dd>To cache files and save information about previously posts and files, you will need to connect Indiekit to a MongoDB database. You can <a href="https://www.mongodb.com/cloud/atlas">host one on MongoDB Atlas</a>.</dd>
+<dd><em>Optional</em></dd>
+<dt>application.name <code>string</code></dt>
+<dd>The name of your server.</dd>
+<dd><em>Optional</em>, defaults to <code>Indiekit</code></dd>
+<dt>application.themeColor <code>string</code></dt>
+<dd>Accent colour used in the application interface.</dd>
+<dd><em>Optional</em>, defaults to <code>#0055ee</code></dd>
+<dt>application.themeColorScheme <code>string</code></dt>
+<dd>Color scheme used in the application interface, <code>automatic</code>, <code>light</code> or <code>dark</code>.</dd>
+<dd><em>Optional</em>, defaults to <code>automatic</code></dd>
+</dl>
+<h2 id="publication">Publication</h2>
+<dl>
+<dt>publication.categories <code>Array | URL</code></dt>
+<dd>
+<p>A list of categories or tags used on your website. Can be an array of values, or the location of a JSON file providing an array of values.</p>
+</dd>
+<dd>
+<p><em>Optional</em></p>
+</dd>
+<dt>publication.locale <code>string</code></dt>
+<dd>
+<p>Your publication’s locale. Currently used to format dates.</p>
+</dd>
+<dd>
+<p><em>Optional</em>, defaults to <code>en</code> (English)</p>
+</dd>
+<dt>publication.me <code>URL</code></dt>
+<dd>
+<p>Your website’s URL.</p>
+</dd>
+<dd>
+<p><em>Required</em></p>
+</dd>
+<dt>publication.mediaEndpoint <code>URL</code></dt>
+<dd>
+<p>Indiekit provides a <a href="https://micropub.spec.indieweb.org/#media-endpoint">media endpoint</a>, but you can use a third-party endpoint by setting a value for this option.</p>
+</dd>
+<dd>
+<p><em>Optional</em></p>
+</dd>
+<dt>publication.postTemplate <code>Function</code></dt>
+<dd>
+<p>A post template is a function that takes post properties received and parsed by the Micropub endpoint and renders them in a given file format, for example, a Markdown file with YAML frontmatter.</p>
+</dd>
+<dd>
+<p><em>Optional</em>, defaults to MF2 JSON</p>
+</dd>
+<dt>publication.postTypes <code>Array</code></dt>
+<dd>
+<p>A set of default paths and templates for different post types. See <a href="/docs/post-types/">Configuring post types</a>.</p>
+</dd>
+<dd>
+<p><em>Optional if using a preset</em></p>
+</dd>
+<dt>publication.preset <code>Function</code></dt>
+<dd>
+<p>A <a href="/docs/plug-ins/#publication-presets">publication preset</a> plug-in.</p>
+</dd>
+<dd>
+<p><em>Optional</em></p>
+</dd>
+<dt>publication.slugSeparator <code>string</code></dt>
+<dd>
+<p>The character used to replace spaces when creating a slug.</p>
+</dd>
+<dd>
+<p><em>Optional</em>, defaults to <code>-</code></p>
+</dd>
+<dt>publication.store <code>Function</code></dt>
+<dd>
+<p>A <a href="/docs/plug-ins/#content-stores">content store</a> plug-in.</p>
+</dd>
+<dd>
+<p><em>Required</em></p>
+</dd>
+<dt>publication.storeMessageTemplate <code>Function</code></dt>
+<dd>
+<p>Function used to customise message format. See <a href="/docs/commit-messages/">Customising commit messages</a>.</p>
+</dd>
+<dd>
+<p><em>Optional</em>, defaults to <code>[action] [postType] [fileType]</code></p>
+</dd>
+<dt>publication.sydnicationTargets <code>Array</code></dt>
+<dd>
+<p>An array of <a href="https://micropub.spec.indieweb.org/#syndication-targets">syndication targets</a>. Example:</p>
+<pre class="language-js"><code class="language-js"><span class="token punctuation">[</span><span class="token punctuation">{</span><br>  uid<span class="token operator">:</span> <span class="token string">'https://twitter.com/paulrobertlloyd/'</span><span class="token punctuation">,</span><br>  name<span class="token operator">:</span> <span class="token string">'Paul Robert Lloyd on Twitter'</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><br>  uid<span class="token operator">:</span> <span class="token string">'https://mastodon.social/@paulrobertlloyd'</span><span class="token punctuation">,</span><br>  name<span class="token operator">:</span> <span class="token string">'Paul Robert Lloyd on Mastodon'</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><br>  uid<span class="token operator">:</span> <span class="token string">'https://micro.blog/paulrobertlloyd'</span><span class="token punctuation">,</span><br>  name<span class="token operator">:</span> <span class="token string">'Paul Robert Lloyd on Micro.blog'</span><br><span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre>
+</dd>
+<dd>
+<p><em>Optional</em></p>
+</dd>
+<dt>publication.timeZone <code>string</code></dt>
+<dd>
+<p>The time zone for your publication. By default this is set to <code>UTC</code>, however if you want to offset dates according to your time zone you can provide <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">a time zone name</a>, for example, <code>Europe/London</code>:</p>
+<pre class="language-js"><code class="language-js">indiekit<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'publication.timeZone'</span><span class="token punctuation">,</span> <span class="token string">'Europe/London'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>This option also accepts a number of other values. See <a href="/docs/time-zone/">Setting a time zone</a>.</p>
+</dd>
+<dd>
+<p><em>Optional</em>, defaults to <code>UTC</code></p>
+</dd>
+<dt>publication.tokenEndpoint <code>URL</code></dt>
+<dd>
+<p>An IndieAuth token endpoint.</p>
+</dd>
+<dd>
+<p><em>Optional</em>, defaults to <code>https://tokens.indieauth.com/token</code></p>
+</dd>
+</dl>
+</div>
+</article>    </main>    <footer class="footer">
+      <div class="footer__container">    <nav class="footer__navigation" aria-label="secondary">      <a href="https://github.com/getindiekit/getindiekithub.io/releases/tag/v0.1.0">v0.1.0</a>    </nav>    <a class="footer__logo" href="https://getindiekit.com">
+          <img class="u-logo" src="https://getindiekit.com/assets/icon.svg" alt="Powered by Indiekit"/>
+        </a>  </div>
+    </footer>  </body>
+</html>

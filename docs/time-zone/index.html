@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="h-x-app color-scheme--automatic">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta name="theme-color" content="#0055ee"/>
+    <meta name="supported-color-schemes" content="light dark"/>
+    <link rel="icon" href="https://getindiekit.com/assets/icon.svg"/>
+    <link rel="mask-icon" href="https://getindiekit.com/assets/icon.svg" color="#0055ee"/>
+    <link rel="stylesheet" href="https://getindiekit.com/assets/app.css"/>
+    <style>
+      :root {
+        --color-accent: #0055ee;
+        --color-accent-dark: #00338F;
+        --color-accent-darkest: #00225F;
+        --color-accent-light: #7EACFF;
+        --color-accent-lightest: #ADCBFF;
+      }
+    </style>
+    <title>Setting a time zone - Indiekit</title>
+  </head><body class="app">    <header class="header">
+      <div class="header__container">
+        <div class="header__title">
+          <a class="u-url" href="https://getindiekit.com">
+            <span class="p-name">Indiekit</span>
+          </a>
+        </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
+    </header><main class="main" id="main">
+      <article class="article">  <h1 class="article__title">
+<span class="article__parent">Documentation</span> Setting a time zone</h1>  <div class="article__body s-linear">
+<p>You can provide one of the following values for <code>publication.timeZone</code>:</p>
+<ul>
+<li>
+<p><code>client</code>:</p>
+<ul>
+<li>If the client sends a date, Indiekit will leave the date untouched</li>
+<li>If the client does not send a date, Indiekit will use the current date as UTC</li>
+</ul>
+</li>
+<li>
+<p><code>server</code> (detects the server’s time zone, possibly set via <code>TZ</code> environment variable or other means):</p>
+<ul>
+<li>If the client sends a date, Indiekit will update the date to use the server’s time zone</li>
+<li>If the client does not send a date, Indiekit will use the current date with server’s time zone</li>
+</ul>
+</li>
+<li>
+<p>Any value from the <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">IANA tz database</a>:</p>
+<ul>
+<li>If the client sends a date, Indiekit will update the date to use the given time zone</li>
+<li>If the client does not send a date, Indiekit will use the current date with given time zone</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>The default value for <code>publication.timeZone</code> is <code>UTC</code>.</p>
+</blockquote>
+<p>So for example, assuming the current local time is <code>2020-09-23T19:00:00+01:00 Europe/London</code>, given the following values sent by the client for <code>published</code>, the date Indiekit saves would be as follows:</p>
+<div class="overflow">
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:left"><code>client</code></th>
+<th style="text-align:left"><code>server</code></th>
+<th style="text-align:left"><code>Asia/Taipei</code></th>
+<th style="text-align:left"><code>UTC</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client doesn’t send a date</td>
+<td style="text-align:left">2020-09-23T18:00:00.000Z</td>
+<td style="text-align:left">2020-09-23T19:00:00.000+01:00</td>
+<td style="text-align:left">2020-09-24T02:00:00.000+08:00</td>
+<td style="text-align:left">2020-09-23T18:00:00.000Z</td>
+</tr>
+<tr>
+<td>2020-01-02</td>
+<td style="text-align:left">2020-01-02</td>
+<td style="text-align:left">2020-01-02T00:00:00.000+01:00</td>
+<td style="text-align:left">2020-01-02T00:00:00.000+08:00</td>
+<td style="text-align:left">2020-01-02T00:00:00.000Z</td>
+</tr>
+<tr>
+<td>2020-01-02T12:00:00</td>
+<td style="text-align:left">2020-01-02T12:00:00</td>
+<td style="text-align:left">2020-01-02T13:00:00.000+01:00</td>
+<td style="text-align:left">2020-01-02T20:00:00.000+08:00</td>
+<td style="text-align:left">2020-01-02T12:00:00.000Z</td>
+</tr>
+<tr>
+<td>2020-01-02T12:00:00Z</td>
+<td style="text-align:left">2020-01-02T12:00:00Z</td>
+<td style="text-align:left">2020-01-02T13:00:00.000+01:00</td>
+<td style="text-align:left">2020-01-02T20:00:00.000+08:00</td>
+<td style="text-align:left">2020-01-02T12:00:00.000Z</td>
+</tr>
+<tr>
+<td>2020-01-02T12:00:00-04:00</td>
+<td style="text-align:left">2020-01-02T12:00:00-04:00</td>
+<td style="text-align:left">2020-01-02T17:00:00.000+01:00</td>
+<td style="text-align:left">2020-01-03T00:00:00.000+08:00</td>
+<td style="text-align:left">2020-01-02T16:00:00.000Z</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>    </main>    <footer class="footer">
+      <div class="footer__container">    <nav class="footer__navigation" aria-label="secondary">      <a href="https://github.com/getindiekit/getindiekithub.io/releases/tag/v0.1.0">v0.1.0</a>    </nav>    <a class="footer__logo" href="https://getindiekit.com">
+          <img class="u-logo" src="https://getindiekit.com/assets/icon.svg" alt="Powered by Indiekit"/>
+        </a>  </div>
+    </footer>  </body>
+</html>

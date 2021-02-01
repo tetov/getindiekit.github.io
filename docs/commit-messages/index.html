@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="h-x-app color-scheme--automatic">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta name="theme-color" content="#0055ee"/>
+    <meta name="supported-color-schemes" content="light dark"/>
+    <link rel="icon" href="https://getindiekit.com/assets/icon.svg"/>
+    <link rel="mask-icon" href="https://getindiekit.com/assets/icon.svg" color="#0055ee"/>
+    <link rel="stylesheet" href="https://getindiekit.com/assets/app.css"/>
+    <style>
+      :root {
+        --color-accent: #0055ee;
+        --color-accent-dark: #00338F;
+        --color-accent-darkest: #00225F;
+        --color-accent-light: #7EACFF;
+        --color-accent-lightest: #ADCBFF;
+      }
+    </style>
+    <title>Customising commit messages - Indiekit</title>
+  </head><body class="app">    <header class="header">
+      <div class="header__container">
+        <div class="header__title">
+          <a class="u-url" href="https://getindiekit.com">
+            <span class="p-name">Indiekit</span>
+          </a>
+        </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
+    </header><main class="main" id="main">
+      <article class="article">  <h1 class="article__title">
+<span class="article__parent">Documentation</span> Customising commit messages</h1>  <div class="article__body s-linear">
+<p>Indiekit provides content store plug-ins with a <code>metaData</code> object. This contains the following meta data that can be used in commit messages:</p>
+<ul>
+<li><code>action</code>: Action to take i.e. ‘create’, ‘upload’.</li>
+<li><code>result</code>: Result of action, i.e. ‘created’, ’uploaded’.</li>
+<li><code>fileType</code>: File type, i.e. ’post’ or ‘file‘.</li>
+<li><code>postType</code>: IndieWeb post type, i.e. ‘note’, ‘photo’, ‘reply’.</li>
+</ul>
+<p>By default, Indiekit outputs the <code>action</code>, <code>postType</code> and <code>fileType</code>, for example <code>create photo post</code>. If you want to change the format to output <code>Created a photo post</code>, you can do the following:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> _ <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>indiekit<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'publication.storeMessageTemplate'</span><span class="token punctuation">,</span> <span class="token parameter">metaData</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">const</span> <span class="token punctuation">{</span>result<span class="token punctuation">,</span> postType<span class="token punctuation">,</span> fileType<span class="token punctuation">}</span> <span class="token operator">=</span> metaData<span class="token punctuation">;</span><br>  <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>_<span class="token punctuation">.</span><span class="token function">upperFirst</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> a </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>postType<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fileType<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+</article>    </main>    <footer class="footer">
+      <div class="footer__container">    <nav class="footer__navigation" aria-label="secondary">      <a href="https://github.com/getindiekit/getindiekithub.io/releases/tag/v0.1.0">v0.1.0</a>    </nav>    <a class="footer__logo" href="https://getindiekit.com">
+          <img class="u-logo" src="https://getindiekit.com/assets/icon.svg" alt="Powered by Indiekit"/>
+        </a>  </div>
+    </footer>  </body>
+</html>
