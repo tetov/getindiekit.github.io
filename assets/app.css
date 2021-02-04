@@ -1583,3 +1583,68 @@ mark {
 .textarea--error {
   border-color: var(--color-error);
 }
+
+.masthead {
+  background-color: var(--color-accent);
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.masthead a:hover {
+  color: var(--color-focus);
+}
+
+.masthead__container {
+  inline-size: var(--container-inline-size);
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+  max-inline-size: var(--container-max-inline-size);
+  padding:
+    var(--container-padding-block, var(--space-block))
+    var(--container-padding-inline, var(--step-0));
+}
+
+.masthead__container {
+
+  --container-padding-block: var(--step-3);
+
+  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.masthead__title {
+  font-size: var(--step-3);
+  font-weight: 800;
+  hanging-punctuation: first;
+  letter-spacing: 0;
+  line-height: var(--line-height-tight);
+}
+
+.masthead__title {
+  font-weight: normal;
+}
+
+.masthead__description {
+  font-size: var(--step-3);
+  font-weight: 800;
+  hanging-punctuation: first;
+  letter-spacing: 0;
+  line-height: var(--line-height-tight);
+}
+
+.masthead__description {
+  max-width: 90%;
+}
+
+.homepage .header {
+  background-color: var(--color-accent);
+  border-bottom-color: var(--color-accent-dark);
+  color: white;
+}
+
+.homepage .header a:hover {
+  color: var(--color-focus);
+}
