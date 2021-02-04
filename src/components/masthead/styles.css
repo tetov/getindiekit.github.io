@@ -1,0 +1,31 @@
+.masthead {
+  background-color: var(--color-accent);
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.masthead a:hover {
+  color: var(--color-focus);
+}
+
+.masthead__container {
+  @extend %container;
+
+  --container-padding-block: var(--step-3);
+
+  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.masthead__title {
+  @extend %title;
+  font-weight: normal;
+}
+
+.masthead__description {
+  @extend %title;
+  max-width: 90%;
+}

@@ -1,9 +1,15 @@
 {% extends "default.njk" %}
 
+{% from "masthead/macro.njk" import masthead %}
+
+{% set appClasses = "homepage" %}
+
 {% block main %}
-{% call article({
+{{ masthead({
   title: title,
-  parent: parent or page.parent,
+  description: description
+}) }}
+{% call article({
   content: content
 }) %}{% block content %}
 {% endblock %}{% endcall %}

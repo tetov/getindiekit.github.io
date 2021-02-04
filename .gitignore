@@ -1,6 +1,9 @@
 # Cache
 .cache
 
+# Generated
+gh-pages
+
 # Logs
 logs
 *.log

@@ -4,3 +4,15 @@
 @import '@indiekit/frontend/styles/helpers/*.css';
 @import '@indiekit/frontend/styles/vendor/*.css';
 @import '@indiekit/frontend/components/**/*.css';
+
+@import '../components/**/*.css';
+
+.homepage .header {
+  background-color: var(--color-accent);
+  border-bottom-color: var(--color-accent-dark);
+  color: white;
+}
+
+.homepage .header a:hover {
+  color: var(--color-focus);
+}
