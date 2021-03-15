@@ -1,19 +1,47 @@
-Indiekit preset for Hugo-based websites.
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="h-x-app color-scheme--automatic">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta name="theme-color" content="#0055ee"/>
+    <meta name="supported-color-schemes" content="light dark"/>
+    <link rel="icon" href="https://getindiekit.com/assets/icon.svg"/>
+    <link rel="mask-icon" href="https://getindiekit.com/assets/icon.svg" color="#0055ee"/>
+    <link rel="stylesheet" href="https://getindiekit.com/assets/app.css"/>
+    <style>
+      :root {
+        --color-accent: #0055ee;
+        --color-accent-dark: #00338F;
+        --color-accent-darkest: #00225F;
+        --color-accent-light: #7EACFF;
+        --color-accent-lightest: #ADCBFF;
+      }
+    </style>
+    <title>Hugo - Indiekit</title>
+  </head><body class="app">    <header class="header">
+      <div class="header__container">
+        <div class="header__title">
+          <a class="u-url" href="https://getindiekit.com">
+            <span class="p-name">Indiekit</span>
+          </a>
+        </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
+    </header><main class="main" id="main">
+      <article class="article">  <h1 class="article__title">
+<span class="article__parent">Plug-ins</span> Hugo</h1>  <div class="article__body s-linear">
+<p>Indiekit preset for Hugo-based websites.</p>
+<h2 id="installation">Installation<a class="header-anchor" href="#installation">#</a></h2>
+<p><code>npm i @indiekit/preset-hugo</code></p>
+<h2 id="configuration">Configuration<a class="header-anchor" href="#configuration">#</a></h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> HugoPreset <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@indiekit/preset-hugo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-## Installation
-
-`npm i @indiekit/preset-hugo`
-
-## Configuration
-
-```js
-const HugoPreset = require('@indiekit/preset-hugo');
-
-const hugo = new HugoPreset({
-  // config options here
-});
-```
-
-### Options
-
-* `frontmatterFormat`: Frontmatter format to use (`json`, `toml` or `yaml`). *Optional*, defaults to `yaml`.
+<span class="token keyword">const</span> hugo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HugoPreset</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// config options here</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="options">Options<a class="header-anchor" href="#options">#</a></h3>
+<ul>
+<li><code>frontmatterFormat</code>: Frontmatter format to use (<code>json</code>, <code>toml</code> or <code>yaml</code>). <em>Optional</em>, defaults to <code>yaml</code>.</li>
+</ul>
+</div>
+</article>    </main>  </body>
+</html>

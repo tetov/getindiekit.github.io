@@ -1,32 +1,59 @@
-Micropub endpoint for Indiekit.
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="h-x-app color-scheme--automatic">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta name="theme-color" content="#0055ee"/>
+    <meta name="supported-color-schemes" content="light dark"/>
+    <link rel="icon" href="https://getindiekit.com/assets/icon.svg"/>
+    <link rel="mask-icon" href="https://getindiekit.com/assets/icon.svg" color="#0055ee"/>
+    <link rel="stylesheet" href="https://getindiekit.com/assets/app.css"/>
+    <style>
+      :root {
+        --color-accent: #0055ee;
+        --color-accent-dark: #00338F;
+        --color-accent-darkest: #00225F;
+        --color-accent-light: #7EACFF;
+        --color-accent-lightest: #ADCBFF;
+      }
+    </style>
+    <title>Micropub - Indiekit</title>
+  </head><body class="app">    <header class="header">
+      <div class="header__container">
+        <div class="header__title">
+          <a class="u-url" href="https://getindiekit.com">
+            <span class="p-name">Indiekit</span>
+          </a>
+        </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
+    </header><main class="main" id="main">
+      <article class="article">  <h1 class="article__title">
+<span class="article__parent">Plug-ins</span> Micropub</h1>  <div class="article__body s-linear">
+<p>Micropub endpoint for Indiekit.</p>
+<h2 id="installation">Installation<a class="header-anchor" href="#installation">#</a></h2>
+<p><code>npm i @indiekit/endpoint-micropub</code></p>
+<h2 id="configuration">Configuration<a class="header-anchor" href="#configuration">#</a></h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> MicropubEndpoint <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@indiekit/endpoint-micropub'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-## Installation
-
-`npm i @indiekit/endpoint-micropub`
-
-## Configuration
-
-```js
-const MicropubEndpoint = require('@indiekit/endpoint-micropub');
-
-const micropubEndpoint = new MicropubEndpoint({
-  // config options here
-});
-```
-
-### Options
-
-* `mountpath`: Path to listen to Micropub requests. *Optional*, defaults to `/micropub`.
-
-### Supported endpoint queries
-
-* Configuration: `/micropub?q=config`
-* Media endpoint location: `/micropub?q=media-endpoint`
-* Available syndication targets (list): `/micropub?q=syndicate-to`
-* Supported queries: `/micropub?q=config`
-* Supported vocabularies (list): `/micropub?q=post-types`
-* Publication categories (list): `/micropub?q=category`
-* Previously published posts (list): `/micropub?q=source`
-* Source content: `/micropub?q=source&url=WEBSITE_URL`
-
-List queries support `filter`, `limit` and `offset` and parameters. For example, `/micropub?q=source&filter=web&limit=10&offset=10`.
+<span class="token keyword">const</span> micropubEndpoint <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MicropubEndpoint</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// config options here</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="options">Options<a class="header-anchor" href="#options">#</a></h3>
+<ul>
+<li><code>mountpath</code>: Path to listen to Micropub requests. <em>Optional</em>, defaults to <code>/micropub</code>.</li>
+</ul>
+<h3 id="supported-endpoint-queries">Supported endpoint queries<a class="header-anchor" href="#supported-endpoint-queries">#</a></h3>
+<ul>
+<li>Configuration: <code>/micropub?q=config</code></li>
+<li>Media endpoint location: <code>/micropub?q=media-endpoint</code></li>
+<li>Available syndication targets (list): <code>/micropub?q=syndicate-to</code></li>
+<li>Supported queries: <code>/micropub?q=config</code></li>
+<li>Supported vocabularies (list): <code>/micropub?q=post-types</code></li>
+<li>Publication categories (list): <code>/micropub?q=category</code></li>
+<li>Previously published posts (list): <code>/micropub?q=source</code></li>
+<li>Source content: <code>/micropub?q=source&amp;url=WEBSITE_URL</code></li>
+</ul>
+<p>List queries support <code>filter</code>, <code>limit</code> and <code>offset</code> and parameters. For example, <code>/micropub?q=source&amp;filter=web&amp;limit=10&amp;offset=10</code>.</p>
+</div>
+</article>    </main>  </body>
+</html>

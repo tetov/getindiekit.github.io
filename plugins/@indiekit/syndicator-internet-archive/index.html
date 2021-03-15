@@ -1,54 +1,65 @@
-Syndicate IndieWeb content to the Internet Archive.
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="h-x-app color-scheme--automatic">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta name="theme-color" content="#0055ee"/>
+    <meta name="supported-color-schemes" content="light dark"/>
+    <link rel="icon" href="https://getindiekit.com/assets/icon.svg"/>
+    <link rel="mask-icon" href="https://getindiekit.com/assets/icon.svg" color="#0055ee"/>
+    <link rel="stylesheet" href="https://getindiekit.com/assets/app.css"/>
+    <style>
+      :root {
+        --color-accent: #0055ee;
+        --color-accent-dark: #00338F;
+        --color-accent-darkest: #00225F;
+        --color-accent-light: #7EACFF;
+        --color-accent-lightest: #ADCBFF;
+      }
+    </style>
+    <title>Internet Archive - Indiekit</title>
+  </head><body class="app">    <header class="header">
+      <div class="header__container">
+        <div class="header__title">
+          <a class="u-url" href="https://getindiekit.com">
+            <span class="p-name">Indiekit</span>
+          </a>
+        </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
+    </header><main class="main" id="main">
+      <article class="article">  <h1 class="article__title">
+<span class="article__parent">Plug-ins</span> Internet Archive</h1>  <div class="article__body s-linear">
+<p>Syndicate IndieWeb content to the Internet Archive.</p>
+<h2 id="installation">Installation<a class="header-anchor" href="#installation">#</a></h2>
+<p><code>npm i @indiekit/syndicator-internet-archive</code></p>
+<h2 id="usage">Usage<a class="header-anchor" href="#usage">#</a></h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> InternetArchiveSyndicator <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@indiekit/syndicator-internet-archive'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-## Installation
-
-`npm i @indiekit/syndicator-internet-archive`
-
-## Usage
-
-```js
-const InternetArchiveSyndicator = require('@indiekit/syndicator-internet-archive');
-
-const internetArchive = new InternetArchiveSyndicator({
-  // config options here
-});
-```
-
-## Options
-
-You can get your Internet Archive API keys from <https://archive.org/account/s3.php>.
-
-### `accessKey`
-
-Your S3 access key.
-
-Type: `string`\
-*Required*
-
-### `secret`
-
-Your S3 secret key.
-
-Type: `string`\
-*Required*
-
-### `name`
-
-Name for this syndicator that may appear in a Micropub client’s publishing interface.
-
-Type: `string`\
-*Optional*, defaults to `Internet Archive`
-
-### `checked`
-
-Tell a Micropub client whether this syndicator should be enabled by default.
-
-Type: `boolean`\
-*Optional*, defaults to `false`
-
-### `uid`
-
-Value Micropub client will include when publishing a post to indicate that it should be sent to this syndicator.
-
-Type: `string`\
-*Optional*, defaults to `https://web.archive.org/`
+<span class="token keyword">const</span> internetArchive <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InternetArchiveSyndicator</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// config options here</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="options">Options<a class="header-anchor" href="#options">#</a></h2>
+<p>You can get your Internet Archive API keys from <a href="https://archive.org/account/s3.php">https://archive.org/account/s3.php</a>.</p>
+<h3 id="accesskey"><code>accessKey</code><a class="header-anchor" href="#accesskey">#</a></h3>
+<p>Your S3 access key.</p>
+<p>Type: <code>string</code><br>
+<em>Required</em></p>
+<h3 id="secret"><code>secret</code><a class="header-anchor" href="#secret">#</a></h3>
+<p>Your S3 secret key.</p>
+<p>Type: <code>string</code><br>
+<em>Required</em></p>
+<h3 id="name"><code>name</code><a class="header-anchor" href="#name">#</a></h3>
+<p>Name for this syndicator that may appear in a Micropub client’s publishing interface.</p>
+<p>Type: <code>string</code><br>
+<em>Optional</em>, defaults to <code>Internet Archive</code></p>
+<h3 id="checked"><code>checked</code><a class="header-anchor" href="#checked">#</a></h3>
+<p>Tell a Micropub client whether this syndicator should be enabled by default.</p>
+<p>Type: <code>boolean</code><br>
+<em>Optional</em>, defaults to <code>false</code></p>
+<h3 id="uid"><code>uid</code><a class="header-anchor" href="#uid">#</a></h3>
+<p>Value Micropub client will include when publishing a post to indicate that it should be sent to this syndicator.</p>
+<p>Type: <code>string</code><br>
+<em>Optional</em>, defaults to <code>https://web.archive.org/</code></p>
+</div>
+</article>    </main>  </body>
+</html>
