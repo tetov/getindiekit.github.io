@@ -1,69 +1,61 @@
-<!DOCTYPE html>
-<html lang="" dir="ltr" class="h-x-app color-scheme--automatic">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-    <meta name="theme-color" content="#0055ee"/>
-    <meta name="supported-color-schemes" content="light dark"/>
-    <link rel="icon" href="https://getindiekit.com/assets/icon.svg"/>
-    <link rel="mask-icon" href="https://getindiekit.com/assets/icon.svg" color="#0055ee"/>
-    <link rel="stylesheet" href="https://getindiekit.com/assets/app.css"/>
-    <style>
-      :root {
-        --color-accent: #0055ee;
-        --color-accent-dark: #00338F;
-        --color-accent-darkest: #00225F;
-        --color-accent-light: #7EACFF;
-        --color-accent-lightest: #ADCBFF;
-      }
-    </style>
-    <title>Twitter - Indiekit</title>
-  </head><body class="app">    <header class="header">
-      <div class="header__container">
-        <div class="header__title">
-          <a class="u-url" href="https://getindiekit.com">
-            <span class="p-name">Indiekit</span>
-          </a>
-        </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
-    </header><main class="main" id="main">
-      <article class="article">  <h1 class="article__title">
-<span class="article__parent">Plug-ins</span> Twitter</h1>  <div class="article__body s-linear">
-<p>Syndicate IndieWeb content to Twitter.</p>
-<h2 id="installation">Installation<a class="header-anchor" href="#installation">#</a></h2>
-<p><code>npm i @indiekit/syndicator-twitter</code></p>
-<h2 id="usage">Usage<a class="header-anchor" href="#usage">#</a></h2>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> TwitterSyndicator <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@indiekit/syndicator-twitter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Syndicate IndieWeb content to Twitter.
 
-<span class="token keyword">const</span> twitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TwitterSyndicator</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token comment">// config options here</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h2 id="options">Options<a class="header-anchor" href="#options">#</a></h2>
-<p>You can get your Twitter API keys from <a href="https://developer.twitter.com/">https://developer.twitter.com/</a>.</p>
-<h3 id="apikey"><code>apiKey</code><a class="header-anchor" href="#apikey">#</a></h3>
-<p>Your Twitter API key.</p>
-<p>Type: <code>string</code><br>
-<em>Required</em></p>
-<h3 id="apikeysecret"><code>apiKeySecret</code><a class="header-anchor" href="#apikeysecret">#</a></h3>
-<p>Your Twitter API secret key.</p>
-<p>Type: <code>string</code><br>
-<em>Required</em></p>
-<h3 id="accesstoken"><code>accessToken</code><a class="header-anchor" href="#accesstoken">#</a></h3>
-<p>Your Twitter access token.</p>
-<p>Type: <code>string</code><br>
-<em>Required</em></p>
-<h3 id="accesstokensecret"><code>accessTokenSecret</code><a class="header-anchor" href="#accesstokensecret">#</a></h3>
-<p>Your Twitter access token secret.</p>
-<p>Type: <code>string</code><br>
-<em>Required</em></p>
-<h3 id="user"><code>user</code><a class="header-anchor" href="#user">#</a></h3>
-<p>Your Twitter username (without the <code>@</code>).</p>
-<p>Type: <code>string</code><br>
-<em>Required</em></p>
-<h3 id="checked"><code>checked</code><a class="header-anchor" href="#checked">#</a></h3>
-<p>Tell a Micropub client whether this syndicator should be enabled by default.</p>
-<p>Type: <code>boolean</code><br>
-<em>Optional</em>, defaults to <code>false</code></p>
-</div>
-</article>    </main>  </body>
-</html>
+## Installation
+
+`npm i @indiekit/syndicator-twitter`
+
+## Usage
+
+```js
+const TwitterSyndicator = require('@indiekit/syndicator-twitter');
+
+const twitter = new TwitterSyndicator({
+  // config options here
+});
+```
+
+## Options
+
+You can get your Twitter API keys from <https://developer.twitter.com/>.
+
+### `apiKey`
+
+Your Twitter API key.
+
+Type: `string`\
+*Required*
+
+### `apiKeySecret`
+
+Your Twitter API secret key.
+
+Type: `string`\
+*Required*
+
+### `accessToken`
+
+Your Twitter access token.
+
+Type: `string`\
+*Required*
+
+### `accessTokenSecret`
+
+Your Twitter access token secret.
+
+Type: `string`\
+*Required*
+
+### `user`
+
+Your Twitter username (without the `@`).
+
+Type: `string`\
+*Required*
+
+### `checked`
+
+Tell a Micropub client whether this syndicator should be enabled by default.
+
+Type: `boolean`\
+*Optional*, defaults to `false`

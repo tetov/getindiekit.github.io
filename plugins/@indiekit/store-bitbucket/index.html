@@ -1,60 +1,45 @@
-<!DOCTYPE html>
-<html lang="" dir="ltr" class="h-x-app color-scheme--automatic">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-    <meta name="theme-color" content="#0055ee"/>
-    <meta name="supported-color-schemes" content="light dark"/>
-    <link rel="icon" href="https://getindiekit.com/assets/icon.svg"/>
-    <link rel="mask-icon" href="https://getindiekit.com/assets/icon.svg" color="#0055ee"/>
-    <link rel="stylesheet" href="https://getindiekit.com/assets/app.css"/>
-    <style>
-      :root {
-        --color-accent: #0055ee;
-        --color-accent-dark: #00338F;
-        --color-accent-darkest: #00225F;
-        --color-accent-light: #7EACFF;
-        --color-accent-lightest: #ADCBFF;
-      }
-    </style>
-    <title>Bitbucket - Indiekit</title>
-  </head><body class="app">    <header class="header">
-      <div class="header__container">
-        <div class="header__title">
-          <a class="u-url" href="https://getindiekit.com">
-            <span class="p-name">Indiekit</span>
-          </a>
-        </div>    <nav class="header__navigation" aria-label="site">      <a href="/docs">Docs</a>      <a href="/plugins">Plug-ins</a>      <a href="https://github.com/getindiekit/indiekit">GitHub</a>    </nav>  </div>
-    </header><main class="main" id="main">
-      <article class="article">  <h1 class="article__title">
-<span class="article__parent">Plug-ins</span> Bitbucket</h1>  <div class="article__body s-linear">
-<p>Store IndieWeb content on Bitbucket.</p>
-<h2 id="installation">Installation<a class="header-anchor" href="#installation">#</a></h2>
-<p><code>npm i @indiekit/store-bitbucket</code></p>
-<h2 id="usage">Usage<a class="header-anchor" href="#usage">#</a></h2>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> BitbucketStore <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@indiekit/store-bitbucket'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Store IndieWeb content on Bitbucket.
 
-<span class="token keyword">const</span> bitbucket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BitbucketStore</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token comment">// config options here</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h2 id="options">Options<a class="header-anchor" href="#options">#</a></h2>
-<h3 id="branch"><code>branch</code><a class="header-anchor" href="#branch">#</a></h3>
-<p>The branch files will be saved to.</p>
-<p>Type: <code>string</code><br>
-<em>Optional</em>, defaults to <code>master</code></p>
-<h3 id="password"><code>password</code><a class="header-anchor" href="#password">#</a></h3>
-<p>A Bitbucket <a href="https://bitbucket.org/account/settings/app-passwords/">app password</a>.</p>
-<p>Type: <code>string</code><br>
-<em>Required</em></p>
-<h3 id="repo"><code>repo</code><a class="header-anchor" href="#repo">#</a></h3>
-<p>The name of your Bitbucket repository.</p>
-<p>Type: <code>string</code><br>
-<em>Required</em></p>
-<h3 id="user"><code>user</code><a class="header-anchor" href="#user">#</a></h3>
-<p>Your Bitbucket username.</p>
-<p>Type: <code>string</code><br>
-<em>Required</em></p>
-</div>
-</article>    </main>  </body>
-</html>
+## Installation
+
+`npm i @indiekit/store-bitbucket`
+
+## Usage
+
+```js
+const BitbucketStore = require('@indiekit/store-bitbucket');
+
+const bitbucket = new BitbucketStore({
+  // config options here
+});
+```
+
+## Options
+
+### `branch`
+
+The branch files will be saved to.
+
+Type: `string`\
+*Optional*, defaults to `master`
+
+### `password`
+
+A Bitbucket [app password](https://bitbucket.org/account/settings/app-passwords/).
+
+Type: `string`\
+*Required*
+
+### `repo`
+
+The name of your Bitbucket repository.
+
+Type: `string`\
+*Required*
+
+### `user`
+
+Your Bitbucket username.
+
+Type: `string`\
+*Required*
