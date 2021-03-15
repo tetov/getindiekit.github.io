@@ -29,34 +29,34 @@
       <article class="article">  <h1 class="article__title">
 <span class="article__parent">Plug-ins</span> Internet Archive</h1>  <div class="article__body s-linear">
 <p>Syndicate IndieWeb content to the Internet Archive.</p>
-<h2>Installation</h2>
+<h2 id="installation">Installation<a class="header-anchor" href="#installation">#</a></h2>
 <p><code>npm i @indiekit/syndicator-internet-archive</code></p>
-<h2>Usage</h2>
+<h2 id="usage">Usage<a class="header-anchor" href="#usage">#</a></h2>
 <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> InternetArchiveSyndicator <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@indiekit/syndicator-internet-archive'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> internetArchive <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InternetArchiveSyndicator</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   <span class="token comment">// config options here</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h2>Options</h2>
+<h2 id="options">Options<a class="header-anchor" href="#options">#</a></h2>
 <p>You can get your Internet Archive API keys from <a href="https://archive.org/account/s3.php">https://archive.org/account/s3.php</a>.</p>
-<h3><code>accessKey</code></h3>
+<h3 id="accesskey"><code>accessKey</code><a class="header-anchor" href="#accesskey">#</a></h3>
 <p>Your S3 access key.</p>
 <p>Type: <code>string</code><br>
 <em>Required</em></p>
-<h3><code>secret</code></h3>
+<h3 id="secret"><code>secret</code><a class="header-anchor" href="#secret">#</a></h3>
 <p>Your S3 secret key.</p>
 <p>Type: <code>string</code><br>
 <em>Required</em></p>
-<h3><code>name</code></h3>
+<h3 id="name"><code>name</code><a class="header-anchor" href="#name">#</a></h3>
 <p>Name for this syndicator that may appear in a Micropub client’s publishing interface.</p>
 <p>Type: <code>string</code><br>
 <em>Optional</em>, defaults to <code>Internet Archive</code></p>
-<h3><code>checked</code></h3>
+<h3 id="checked"><code>checked</code><a class="header-anchor" href="#checked">#</a></h3>
 <p>Tell a Micropub client whether this syndicator should be enabled by default.</p>
 <p>Type: <code>boolean</code><br>
 <em>Optional</em>, defaults to <code>false</code></p>
-<h3><code>uid</code></h3>
+<h3 id="uid"><code>uid</code><a class="header-anchor" href="#uid">#</a></h3>
 <p>Value Micropub client will include when publishing a post to indicate that it should be sent to this syndicator.</p>
 <p>Type: <code>string</code><br>
 <em>Optional</em>, defaults to <code>https://web.archive.org/</code></p>

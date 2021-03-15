@@ -29,37 +29,37 @@
       <article class="article">  <h1 class="article__title">
 <span class="article__parent">Plug-ins</span> GitLab</h1>  <div class="article__body s-linear">
 <p>Store IndieWeb content on GitLab.</p>
-<h2>Installation</h2>
+<h2 id="installation">Installation<a class="header-anchor" href="#installation">#</a></h2>
 <p><code>npm i @indiekit/store-gitlab</code></p>
-<h2>Configuration</h2>
+<h2 id="configuration">Configuration<a class="header-anchor" href="#configuration">#</a></h2>
 <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> GitlabStore <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@indiekit/store-gitlab'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> gitlab <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GitlabStore</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   <span class="token comment">// config options here</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h2>Options</h2>
-<h3><code>branch</code></h3>
+<h2 id="options">Options<a class="header-anchor" href="#options">#</a></h2>
+<h3 id="branch"><code>branch</code><a class="header-anchor" href="#branch">#</a></h3>
 <p>The branch files will be saved to.</p>
 <p>Type: <code>string</code><br>
 <em>Optional</em>, defaults to <code>master</code></p>
-<h3><code>host</code></h3>
+<h3 id="host"><code>host</code><a class="header-anchor" href="#host">#</a></h3>
 <p>GitLab instance URL.</p>
 <p>Type: <code>string</code><br>
 <em>Optional</em>, defaults to <code>https://gitlab.com</code></p>
-<h3><code>projectId</code></h3>
+<h3 id="projectid"><code>projectId</code><a class="header-anchor" href="#projectid">#</a></h3>
 <p>GitLab project ID.</p>
 <p>Type: <code>string</code><br>
 <em>Required (if <code>user</code> and <code>repo</code> not provided)</em></p>
-<h3><code>repo</code></h3>
+<h3 id="repo"><code>repo</code><a class="header-anchor" href="#repo">#</a></h3>
 <p>The name of your GitLab repository.</p>
 <p>Type: <code>string</code><br>
 <em>Required (if <code>projectId</code> not provided)</em></p>
-<h3><code>token</code></h3>
+<h3 id="token"><code>token</code><a class="header-anchor" href="#token">#</a></h3>
 <p>A GitLab access token.</p>
 <p>Type: <code>string</code><br>
 <em>Required</em></p>
-<h3><code>user</code></h3>
+<h3 id="user"><code>user</code><a class="header-anchor" href="#user">#</a></h3>
 <p>Your GitLab username.</p>
 <p>Type: <code>string</code><br>
 <em>Required (if <code>projectId</code> not provided)</em></p>
