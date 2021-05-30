@@ -1,9 +1,14 @@
 require('dotenv').config();
+const markdownIt = require('@indiekit/frontend/lib/markdown-it');
+
+markdownIt.linkify.set({
+  fuzzyLink: false
+})
 
 module.exports = function (eleventyConfig) {
   // Template libraries
+  eleventyConfig.setLibrary('md', markdownIt);
   eleventyConfig.setLibrary('njk', require('./lib/libraries/nunjucks'));
-  eleventyConfig.setLibrary('md', require('./lib/libraries/markdown'));
 
   // Plugins
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
