@@ -24,6 +24,10 @@ application.themeColorScheme `string`
 : Color scheme used in the application interface, `automatic`, `light` or `dark`.
 : *Optional*, defaults to `automatic`
 
+application.url `string`
+: The URL of your server. Useful if Indiekit is running behind a reverse proxy.
+: *Optional*, defaults to the URL of your server (as provided by request headers).
+
 ## Publication
 
 publication.categories `Array | URL`
