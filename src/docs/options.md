@@ -70,7 +70,7 @@ publication.storeMessageTemplate `Function`
 : Function used to customise message format. See [Customising commit messages](/docs/commit-messages/).
 : *Optional*, defaults to `[action] [postType] [fileType]`
 
-publication.sydnicationTargets `Array`
+publication.syndicationTargets `Array`
 : An array of [syndication targets](https://micropub.spec.indieweb.org/#syndication-targets). Example:
 
   ```js
